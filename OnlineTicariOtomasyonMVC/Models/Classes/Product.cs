@@ -31,5 +31,6 @@ namespace OnlineTicariOtomasyonMVC.Models.Classes
         public Category Category { get; set; }
 
         public SalesMovements SalesMovements { get; set; }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace OnlineTicariOtomasyonMVC.Models.Classes
 {
-    public class SalesMovements // Satış Hareketleri
+    public class SalesMovement // Satış Hareketleri
     {
         [Key]
         public int SalesMovementsId { get; set; }
@@ -22,9 +22,9 @@ namespace OnlineTicariOtomasyonMVC.Models.Classes
        -Kim satıyor? Personel
        */
 
-        public ICollection<Product> Products { get; set; }
-        public ICollection<Current> Currents { get; set; }
-        public ICollection<Staff> Staffs { get; set; }
+        public Product Product { get; set; }
+        public Current Current { get; set; }
+        public Staff Staff { get; set; }
 
     }
 }

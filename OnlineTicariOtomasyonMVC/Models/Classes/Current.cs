@@ -28,6 +28,6 @@ namespace OnlineTicariOtomasyonMVC.Models.Classes
         [StringLength(50)]
         public string CurrentMail { get; set; }
 
-        public SalesMovements SalesMovements { get; set; }
+        public ICollection<SalesMovement> SalesMovements { get; set; }
     }
 }

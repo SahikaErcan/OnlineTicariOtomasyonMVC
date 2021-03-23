@@ -14,7 +14,7 @@ namespace OnlineTicariOtomasyonMVC.Models.Classes
 
         [Column(TypeName = "varchar")]
         [StringLength(30)]
-        public string StaffFirtName { get; set; }
+        public string StaffFirstName { get; set; }
 
         [Column(TypeName = "varchar")]
         [StringLength(30)]
@@ -27,8 +27,8 @@ namespace OnlineTicariOtomasyonMVC.Models.Classes
          Çünkü burda görselin yolunu tutacağız.
          */
 
+        public ICollection<SalesMovement> SalesMovements { get; set; }
 
-        public SalesMovements SalesMovements { get; set; }
         // Bir personel Bir deparmanda bulunur
         public Department Department { get; set; }
     }

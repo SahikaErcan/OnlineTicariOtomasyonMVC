@@ -11,13 +11,16 @@ namespace OnlineTicariOtomasyonMVC.Models.Classes
     {
         [Key]
         public int Bill_Item_Id { get; set; }
+
         [Column(TypeName = "varchar")]
         [StringLength(100)]
         public string Bill_Item_Explanation { get; set; } // Açıklama
+
         public int Bill_Item_Quantity { get; set; } // Miktar
         public decimal Bill_Item_UnitPrice { get; set; } // Birim Fiyat
         public decimal Bill_Item_Amount { get; set; } // Fatura Kalemi Tutar
+        
         // Bir fatura kaleminin 1 tane faturası olabilir.
-        public Bills Bills { get; set; } // Bire Çok İlişki
+        public Bill Bills { get; set; } // Bire Çok İlişki
     }
 }

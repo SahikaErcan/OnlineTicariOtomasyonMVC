@@ -7,33 +7,34 @@ using System.Web;
 
 namespace OnlineTicariOtomasyonMVC.Models.Classes
 {
-    public class Bills // Faturalar
+    public class Bill // Faturalar
     {
         [Key]
-        public int BillsId { get; set; }
+        public int Bill_Id { get; set; }
 
         [Column(TypeName = "char")]
         [StringLength(1)]
-        public string BillsSerialNumber { get; set; } // Farura Seri Numarası
+        public string BillSerialNumber { get; set; } // Farura Seri Numarası
 
         [Column(TypeName = "varchar")]
         [StringLength(6)]
-        public string BillsRowNumber { get; set; } // Fatura Sıra Numarası
+        public string BillRowNumber { get; set; } // Fatura Sıra Numarası
 
-        public DateTime BillsHistory { get; set; } // Tarih
+        public DateTime BillHistory { get; set; } // Tarih
 
         [Column(TypeName = "varchar")]
         [StringLength(60)]
-        public int BillsTaxAdministration { get; set; } // Vergi Dairesi
+        public string BillTaxAdministration { get; set; } // Vergi Dairesi
         public DateTime BillsHour { get; set; } // Saat
 
         [Column(TypeName = "varchar")]
         [StringLength(30)]
-        public string BillsReceiver { get; set; } // Teslim Alan Kimse - Alıcı
+        public string BillReceiver { get; set; } // Teslim Alan Kimse - Alıcı
 
         [Column(TypeName = "varchar")]
         [StringLength(30)]
-        public string BillsDeliverer { get; set; } // Teslim Eden Kimse - Dağıtıcı
+        public string BillDeliverer { get; set; } // Teslim Eden Kimse - Dağıtıcı
+        
         // Bir faturanın birden fazla kalemi olabilir. ICollection
         public ICollection<Bill_Item>  Bill_Items { get; set; }
     }

@@ -30,7 +30,8 @@ namespace OnlineTicariOtomasyonMVC.Models.Classes
         // Bir ürün bir kategoriye aittir.
         public Category Category { get; set; }
 
-        public SalesMovements SalesMovements { get; set; }
+        // Her ürünün birden fazla satışı olabilir.
+        public ICollection<SalesMovement> SalesMovements { get; set; } // Satış Hareketleri
 
     }
 }

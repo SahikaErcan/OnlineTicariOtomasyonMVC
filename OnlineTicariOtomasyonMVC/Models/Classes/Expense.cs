@@ -15,6 +15,7 @@ namespace OnlineTicariOtomasyonMVC.Models.Classes
         [Column(TypeName = "varchar")]
         [StringLength(100)]
         public string ExpenseExplanation { get; set; } // Açıklama
+
         public DateTime ExpenseHistory { get; set; } // Tarih
         public decimal ExpenseAmount { get; set; } // Yetki
     }

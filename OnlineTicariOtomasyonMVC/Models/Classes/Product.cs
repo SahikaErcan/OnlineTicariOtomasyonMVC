@@ -21,14 +21,15 @@ namespace OnlineTicariOtomasyonMVC.Models.Classes
         public string Brand { get; set; } //Marka
         public short Stock { get; set; } //Stok
         public decimal PurchasePrice { get; set; } // Satın alma fiyatı
-        public decimal SellingFree { get; set; } //Satış ücreti 
+        public decimal SellingPrice { get; set; } //Satış ücreti 
         public bool Status { get; set; } //Durum
 
         [Column(TypeName = "varchar")]
         [StringLength(250)]
         public string ProductImage { get; set; } // Ürün görsel
         // Bir ürün bir kategoriye aittir.
-        public Category Category { get; set; }
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
 
         // Her ürünün birden fazla satışı olabilir.
         public ICollection<SalesMovement> SalesMovements { get; set; } // Satış Hareketleri

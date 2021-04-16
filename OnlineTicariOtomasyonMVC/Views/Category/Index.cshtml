@@ -1,22 +1,35 @@
-﻿
+﻿@using OnlineTicariOtomasyonMVC.Models.Classes
+@model List<Category>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<table class="table table-bordered" style="margin-top:20px;">
-    <tr>
+<table class="table table-bordered mt-4">
+    <tr class="bg-dark text-light">
         <th>ID</th>
         <th>Kategori</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>Beyaz Eşya</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>Telefon</td>
-    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.CategoryId</td>
+            <td>@k.CategoryName</td>
+            <td>
+                <a href="/Category/CategoryDelete/@k.CategoryId" class="btn btn-danger pr-4 pl-4">
+                    Sil
+                </a>
+            </td>
+            <td>
+                <a href="/Category/CategoryBring/@k.CategoryId" class="btn btn-warning text-light">
+                    Güncelle
+                </a>
+            </td>
+
+        </tr>
+    }
 </table>
-<button class="btn btn-primary">Yeni Kategori</button>
+<a href="/Category/CategoryAdd" class="btn btn-primary">Kategori Ekle</a>
 
